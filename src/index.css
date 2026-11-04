@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, 'Liberation Mono',
+    monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-200);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-amber-400);
+  color: var(--color-slate-950);
+}
+
+/* Slim scrollbars for the sidebar and code panes. */
+@utility scroll-slim {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-slate-700) transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-700);
+    border-radius: 9999px;
+  }
+}
+
+/* Shiki emits its own background colour; keep it aligned with the page. */
+.shiki {
+  background-color: var(--color-slate-900) !important;
+}
